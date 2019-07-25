@@ -1,0 +1,5 @@
+#!/bin/sh
+
+#Opens a prompt with $1 text and executes $2 command
+
+[ $(echo -e "Yes\nNo" | rofi -dmenu -p $1) == "Yes" ]  && $2
