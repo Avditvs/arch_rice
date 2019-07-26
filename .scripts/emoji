@@ -1,0 +1,2 @@
+cat $HOME/.scripts/resources/emojis | rofi -i -p "Emoji" -dmenu | cut -d ' ' -f 1 | xsel -i -b
+%notify-send "$(xsel -o -b) copié"
