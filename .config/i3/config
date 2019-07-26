@@ -208,7 +208,7 @@ bindsym $mod+$reload reload
 bindsym $mod+$restart restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+$exit exec --no-startup-id prompt ' Do you really want to quit ?' 'poweroff'
+bindsym $mod+$exit exec --no-startup-id prompt $(echo "Quit?") 'poweroff'
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
