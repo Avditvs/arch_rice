@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Sends a notificatio when $1 job id finished
+
+$@
+notify-send -a "Jobs" "This job is finished" "$(echo "$@")" 
