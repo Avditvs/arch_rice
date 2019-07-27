@@ -1,0 +1,4 @@
+function mksw(){
+	mkdir $1
+	cd $1
+}
