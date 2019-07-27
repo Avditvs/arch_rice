@@ -270,7 +270,7 @@
     #history = ctrl+é
 
     # Context menu.
-    context = ctrl+shift+period
+    context = mod4+period
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
