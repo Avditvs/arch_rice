@@ -249,6 +249,10 @@ bindsym $mod+$resize mode "resize"
 # Launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+#Set max floating size
+floating_maximum_size 1200x900
+for_window [class=".*"] move position center
+
 ################################
 
 ############ Media #############
