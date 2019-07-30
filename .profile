@@ -10,4 +10,4 @@ xrandr --output Virtual-1 --mode 1360x768
 feh --bg-fill $HOME/.config/.wallpaper
 
 # Launch compositor for transparent terminals 
-xcompmgr &
+compton --config $HOME/.config/compton/compton.conf &
