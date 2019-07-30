@@ -2,5 +2,5 @@
 
 # Sends a notificatio when $1 job id finished
 
-$@
-notify-send -a "Jobs" "This job is finished" "$(echo "$@")" 
+$1
+notify-send -a "Jobs" "This job is finished" "$(echo "$1")" 
