@@ -187,7 +187,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 #-Assign windows to workspaces-#
 
 assign [class="^Thunderbird$"] 5
-assign [class="^Firefox$"] 2
+assign [class="^firefox$"] 2
 
 ################################
 
