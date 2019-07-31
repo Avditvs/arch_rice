@@ -100,9 +100,6 @@ bindsym $mod+t exec $mail
 # search on archwiki
 bindsym $mod+a exec $archsearch
 
-# show keybindings
-bindsym $mod+k exec grep -e ^bindsym $HOME/.config/i3/config | cut -d " " -f 1 --complement | rofi -dmenu
-
 ############ Tiles #############
 
 # change focus
