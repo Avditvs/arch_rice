@@ -1,0 +1,2 @@
+cat $HOME/.scripts/resources/font-awesome | rofi -dmenu | cut -d ' ' -f 1 | xsel -i -b
+notify-send -a "Font-Awesome" "$(xsel -o -b) copied to clipboard"

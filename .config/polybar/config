@@ -235,7 +235,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = Power
+label-open = 
 label-open-foreground = ${colors.foreground}
 label-close = Cancel
 label-close-foreground = ${colors.foreground}
