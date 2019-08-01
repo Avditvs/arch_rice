@@ -60,7 +60,7 @@ font-5 = FontAwesome5Free:style=Solid:size=10;1
 
 modules-left = i3
 modules-center = date
-modules-right = alsa pulseaudio memory cpu powermenu
+modules-right =cpu_mem alsa powermenu
 
 tray-position = center
 tray-padding = 2
@@ -144,6 +144,13 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 ; Separator in between workspaces
 ; label-separator = |
 
+[module/cpu_mem]
+type = custom/script
+exec = polybar-cpu-mem
+tail = true
+interval = 2
+click-right = st -e top &
+click-left = st -e gotop &
 
 
 [module/xbacklight]

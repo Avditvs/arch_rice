@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cpu=$(top -bn 2 -d 0.1 | grep '^%Cpu' | tail -n 1 | gawk '{print $2+$4+$6}')
+mem=$(free | grep Mem | awk '{print ($2-$7)/$2 *100}' | cut -d. -f1)
+printf "  %b%%    %b%%" $mem $cpu
