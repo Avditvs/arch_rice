@@ -256,6 +256,7 @@ for_window [class=".*"] move position center
 bindsym $mod+x  exec "amixer -q sset Master,0 1+ unmute"
 bindsym $mod+w exec "amixer -q sset Master,0 1- unmute"
 bindsym $mod+c exec "amixer -q sset Master toggle" 
-
+bindsym --release Print exec scrot '%Y-%m-%d-%s_screenshot.jpg' -e 'mv $f ~/Images & notify-send -a Scrot "Screenshot saved as $f"'
+bindsym --release Shift+Print exec scrot -s '%Y-%m-%d-%s_screenshot.jpg' -e 'mv $f ~/Images & notify-send -a Scrot "Screenshot saved as $f"'
 ################################
 
