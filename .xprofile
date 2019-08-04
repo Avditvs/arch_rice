@@ -9,3 +9,5 @@ feh --bg-fill $HOME/.config/.wallpaper
 # Launch compositor for transparent terminals
 compton --config $HOME/.config/compton/compton.conf &
 
+# Launch notification daemon
+dunst &
