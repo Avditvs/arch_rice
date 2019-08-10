@@ -9,5 +9,11 @@ feh --bg-fill $HOME/.config/.wallpaper
 # Launch compositor for transparent terminals
 compton --config $HOME/.config/compton/compton.conf &
 
+# networkManager applet
+nm-applet &
+
+#hide pointer
+unclutter --timeout 10 &
+
 # Launch notification daemon
 dunst &
