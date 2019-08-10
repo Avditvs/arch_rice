@@ -258,5 +258,7 @@ bindsym $mod+w exec "amixer -q sset Master,0 1- unmute"
 bindsym $mod+c exec "amixer -q sset Master toggle" 
 bindsym --release Print exec scrot '%Y-%m-%d-%s_screenshot.jpg' -e 'mv $f ~/Images & notify-send -a Scrot "Screenshot saved as $f"'
 bindsym --release Shift+Print exec scrot -s '%Y-%m-%d-%s_screenshot.jpg' -e 'mv $f ~/Images & notify-send -a Scrot "Screenshot saved as $f"'
+bindsym --release Ctrl+Print exec scrot 'scrshot.jpg' -e 'xclip -selection clipboard -t image/jpeg < $f & notify-send -a Scrot "Screenshot copied to clipboard"' 
+bindsym --release Ctrl+Shift+Print exec scrot -s 'scrshot.jpg' -e 'xclip -selection clipboard -t image/jpeg < $f & notify-send -a Scrot "Screenshot copied to clipboard"' 
 ################################
 
