@@ -59,10 +59,10 @@ font-4 = FontAwesome5Free:style=Regular:size=10;1
 font-5 = FontAwesome5Free:style=Solid:size=10;1
 
 modules-left = i3 xwindow
-modules-center = date
+modules-center = date 
 modules-right =battery cpu_mem alsa
 
-tray-position = center
+tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 
