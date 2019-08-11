@@ -143,6 +143,13 @@ bindsym $mod+space focus mode_toggle
 # focus the child container
 #bindsym $mod+d focus child
 
+
+# gaps
+bindsym $mod+p gaps outer current plus 5
+bindsym $mod+m gaps outer current minus 5
+bindsym $mod+shift+p gaps inner current plus 5
+bindsym $mod+shift+m gaps inner current minus 5
+
 ################################
 
 ########## Workspaces ##########
