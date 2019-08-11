@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Initial configuration
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 2
 gaps outer 0
 gaps inner 7
 
@@ -75,6 +75,8 @@ font pango:Inconsolata-Regular 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+client.focused			#bf616a #2f343f #d8dee8 #bf616a #926457
+client.placeholder		#2f343f #2f343f #d8dee8 #2f343f #575C92
 ################################
 
 ########### Programs ###########
