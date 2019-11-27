@@ -1,0 +1,4 @@
+#/bin/bash
+
+save-brightness
+light -S &

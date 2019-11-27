@@ -1,2 +1,3 @@
-st.alpha: 0.95
-st.font: Inconsolata-12;
+st.alpha: 0.95;
+st.font: Inconsolata-13;
+Xft.dpi: 135;

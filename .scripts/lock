@@ -1,0 +1,5 @@
+#!/bin/sh
+if ! [ $(pidof i3lock) ]
+then
+	i3lock -en -i ~/.config/wallpaper.png
+fi

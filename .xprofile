@@ -1,7 +1,9 @@
 #!/bin/sh
 
+xrdb .Xresources
+
 # Set the resolution to 1360x768
-xrandr --output VGA-1 --mode 1360x768
+#xrandr --output VGA-1 --mode 1360x768
 
 # Set wallpaper
 feh --bg-fill $HOME/.config/.wallpaper
@@ -12,8 +14,21 @@ compton --config $HOME/.config/compton/compton.conf &
 # networkManager applet
 nm-applet &
 
+#bluetooth applet
+blueman-applet &
+
+#mega
+#megasync &
+
+# caffeine
+#caffeine &
+
 #hide pointer
 unclutter --timeout 10 &
 
 # Launch notification daemon
 dunst &
+
+# locking
+xset s 180 180
+xss-lock -- systemctl suspend &

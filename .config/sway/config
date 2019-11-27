@@ -15,6 +15,14 @@ gaps outer 0
 gaps inner 7
 
 
+########Inputs##########
+include $HOME/.config/sway/inputs
+
+
+########## Wallpaper ###########
+output * bg $HOME/.config/.wallpaper fill
+
+
 ########### Variables ##########
 
 #--------Section - Keys--------#
@@ -170,34 +178,33 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $mod+ampersand workspace $ws1
+bindsym $mod+eacute workspace $ws2
+bindsym $mod+quotedbl workspace $ws3
+bindsym $mod+apostrophe workspace $ws4
+bindsym $mod+parenleft workspace $ws5
+bindsym $mod+minus workspace $ws6
+bindsym $mod+egrave workspace $ws7
+bindsym $mod+underscore workspace $ws8
+bindsym $mod+ccedilla workspace $ws9
+bindsym $mod+agrave workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+ampersand move container to workspace $ws1
+bindsym $mod+Shift+eacute move container to workspace $ws2
+bindsym $mod+Shift+quotedbl move container to workspace $ws3
+bindsym $mod+Shift+apostrophe move container to workspace $ws4
+bindsym $mod+Shift+parenleft move container to workspace $ws5
+bindsym $mod+Shift+minus move container to workspace $ws6
+bindsym $mod+Shift+egrave move container to workspace $ws7
+bindsym $mod+Shift+underscore move container to workspace $ws8
+bindsym $mod+Shift+ccedilla move container to workspace $ws9
+bindsym $mod+Shift+agrave move container to workspace $ws10
 
 #-Assign windows to workspaces-#
 
 assign [class="^Thunderbird$"] 5
 assign [class="^firefox$"] 2
-assign [class="^konsole$"] 6
 
 ################################
 
@@ -210,7 +217,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec --no-startup-id prompt $(echo "Quit?") 'i3-msg exit'
+bindsym $mod+Shift+e exec --no-startup-id prompt $(echo "Quit?") 'swaymsg exit'
 
 # resize window (you can also use the mouse for that)
 #mode "resize" {
@@ -237,10 +244,10 @@ bindsym $mod+$alt+Left resize shrink width 10px or 10ppt
 bindsym $mod+$alt+Up resize shrink height 10px or 10ppt
 bindsym $mod+$alt+Down resize grow height 10px or 10ppt
 
-bindsym $mod+Ctrl+Left exec i3-msg -q resize grow width 10px && i3-msg -q move left 10px
-bindsym $mod+Ctrl+Right exec i3-msg -q resize shrink width 10px && i3-msg -q move right 10px
-bindsym $mod+Ctrl+Up exec i3-msg -q resize grow height 10px && i3-msg -q move up 10px
-bindsym $mod+Ctrl+Down exec i3-msg -q resize shrink height 10px && i3-msg move down 10px
+#bindsym $mod+Ctrl+Left exec i3-msg -q resize grow width 10px && i3-msg -q move left 10px
+#bindsym $mod+Ctrl+Right exec i3-msg -q resize shrink width 10px && i3-msg -q move right 10px
+#bindsym $mod+Ctrl+Up exec i3-msg -q resize grow height 10px && i3-msg -q move up 10px
+#bindsym $mod+Ctrl+Down exec i3-msg -q resize shrink height 10px && i3-msg move down 10px
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -252,12 +259,27 @@ bindsym $mod+Ctrl+Down exec i3-msg -q resize shrink height 10px && i3-msg move d
 #	}
 #}
 
+bar {
+    position top
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
+
+
 # Launch polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #Set max floating size
-floating_maximum_size 1200x900
-for_window [class=".*"] move position center
+#floating_maximum_size 1200x900
+#for_window [class=".*"] move position center
 
 ################################
 
@@ -266,10 +288,10 @@ for_window [class=".*"] move position center
 bindsym XF86AudioRaiseVolume  exec "amixer -q sset Master 1%+ unmute"
 bindsym  XF86AudioLowerVolume exec "amixer -q sset Master 1%- unmute"
 bindsym  XF86AudioMute exec "amixer -q sset Master toggle" 
-bindsym --release Print exec scrot '%Y-%m-%d-%s_screenshot.jpg' -e 'mv $f ~/Images/ & notify-send -a Scrot "Screenshot saved as $f"'
-bindsym --release Shift+Print exec scrot -s '%Y-%m-%d-%s_screenshot.jpg' -e 'mv $f ~/Images/ & notify-send -a Scrot "Screenshot saved as $f"'
-bindsym --release Ctrl+Print exec scrot 'scrshot.jpg' -e 'xclip -selection c -t image/png < $f & notify-send -a Scrot "Screenshot copied to clipboard"' 
-bindsym --release Ctrl+Shift+Print exec scrot -s 'scrshot.jpg' -e 'xclip -selection c -t image/png < $f & notify-send -a Scrot "Screenshot copied to clipboard"' 
+bindsym --release Print exec scrot '%Y-%m-%d-%s_screenshot.jpg' -e 'mv $f ~/Images & notify-send -a Scrot "Screenshot saved as $f"'
+bindsym --release Shift+Print exec scrot -s '%Y-%m-%d-%s_screenshot.jpg' -e 'mv $f ~/Images & notify-send -a Scrot "Screenshot saved as $f"'
+bindsym --release Ctrl+Print exec scrot 'scrshot.jpg' -e 'xclip -selection clipboard -t image/jpeg < $f & notify-send -a Scrot "Screenshot copied to clipboard"' 
+bindsym --release Ctrl+Shift+Print exec scrot -s 'scrshot.jpg' -e 'xclip -selection clipboard -t image/jpeg < $f & notify-send -a Scrot "Screenshot copied to clipboard"' 
 bindsym XF86MonBrightnessUp exec "light -A 3"
 bindsym XF86MonBrightnessDown exec "light -U 3"
 ################################
