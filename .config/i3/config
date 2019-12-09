@@ -191,13 +191,21 @@ bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+0 move container to workspace $ws1
 
 #-Assign windows to workspaces-#
 
 assign [class="^Thunderbird$"] 5
 assign [class="^firefox$"] 2
 assign [class="^konsole$"] 6
+
+bindsym $mod+$alt+d move workspace to output right
+bindsym $mod+$alt+q move workspace to output left
+bindsym $mod+$alt+z move workspace to output up
+bindsym $mod+$alt+s move workspace to output down
+
+#-Scratchpad
+
 
 ################################
 
@@ -274,3 +282,5 @@ bindsym XF86MonBrightnessUp exec "light -A 3"
 bindsym XF86MonBrightnessDown exec "light -U 3"
 ################################
 
+
+#exec-always $HOME/.config/i3/applets

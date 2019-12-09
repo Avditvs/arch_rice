@@ -1,5 +1,3 @@
 #!/bin/sh
-if ! [ $(pidof i3lock) ]
-then
-	i3lock -en -i ~/.config/wallpaper.png
-fi
+killall i3lock
+i3lock -en -i ~/.config/wallpaper.png --force-clock --indpos="380:990:1920:1080:10" --timepos="190:1000" --radius 35 --timesize=60 --redraw-thread --veriftext="" --wrongtext="" --locktext="" --ring-width 4 --insidecolor=ffffff00 --line-uses-inside --ringcolor=6b8582ff --insidewrongcolor=ffffff00 --insidevercolor=ffffff00 --noinputtext=""

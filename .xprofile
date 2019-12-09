@@ -9,13 +9,13 @@ xrdb .Xresources
 feh --bg-fill $HOME/.config/.wallpaper
 
 # Launch compositor for transparent terminals
-compton --config $HOME/.config/compton/compton.conf &
+picom --config $HOME/.config/compton/compton.conf &
 
 # networkManager applet
-nm-applet &
+#nm-applet &
 
 #bluetooth applet
-blueman-applet &
+#blueman-applet &
 
 #mega
 #megasync &
